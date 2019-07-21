@@ -11,7 +11,7 @@ import LineGraphView
 
 class ViewController: UIViewController {
 
-    let values: [CGFloat] = [10,20,15, 300,50, 0, 45, 10000, 100, 40,]
+    let values: [Int] = [10,20,15, 300,50, 0, 45, 10000, 100, 40,]
     
     lazy var lineGraphView: LineGraphView = {
         let line:LineGraphView = LineGraphView(graphHeight: 400, values: values)
@@ -21,7 +21,6 @@ class ViewController: UIViewController {
         line.backgroundColor = .white
         line.layer.borderWidth = 1
         line.layer.borderColor = UIColor.black.cgColor
-        line.toValue = 1.0
         
         return line
     }()
@@ -43,7 +42,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        lineGraphView.lineAnimetion()
+        lineGraphView.setLineGraph()
     }
 
 

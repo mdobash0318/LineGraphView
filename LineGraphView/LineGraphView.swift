@@ -14,7 +14,7 @@ public class LineGraphView: UIView {
     
     public let lineLayer:CAShapeLayer = CAShapeLayer()
     /// グラフに表示する値を格納する配列
-    public var valueCount: [CGFloat]?
+    public var valueCount: [Int]?
     
     /// アニメーションの表示の有無 デフォルト:true
     public var isAnime: Bool = true
@@ -65,12 +65,10 @@ public class LineGraphView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        backgroundColor = .clear
     }
     
     
-    public convenience init(graphHeight height: CGFloat, values: [CGFloat]){
+    public convenience init(graphHeight height: CGFloat, values: [Int]){
         self.init()
         graphHeight = height
         valueCount = values
@@ -93,21 +91,20 @@ public class LineGraphView: UIView {
     /// 棒グラフの描画
     /// isAnimeがtrueならアニメーションを流す
     /// falseなら描画のみ
-    public func lineAnimetion(){
+    public func setLineGraph(){
         guard let _valueCount = valueCount else {
             debugPrint("valueCount is nil")
             return
         }
         scrollView.layer.addSublayer(lineLayer)
         let path = UIBezierPath()
-        path.move(to: CGPoint(x: 20, y: graphHeight - positioningY(value: _valueCount[0])))
+        path.move(to: CGPoint(x: 20, y: graphHeight - positioningY(value: CGFloat(_valueCount[0]))))
         
         /* 一つ目の値を表示するラベルを生成 */
         let firstLabel: UILabel = {
             let label:UILabel = valueLabel
-            label.frame = CGRect(x: 20, y: graphHeight - positioningY(value: _valueCount[0]), width: 0, height: 0)
-            label.text = "\(Int(_valueCount[0]))"
-            label.textColor = .black
+            label.frame = CGRect(x: 20, y: graphHeight - positioningY(value: CGFloat(_valueCount[0])), width: 0, height: 0)
+            label.text = "\(_valueCount[0])"
             label.sizeToFit()
             
             return label
@@ -115,12 +112,12 @@ public class LineGraphView: UIView {
         scrollView.addSubview(firstLabel)
         
         for i in 1..<_valueCount.count {
-            path.addLine(to: CGPoint(x: 20 * CGFloat(i + 1), y: graphHeight - positioningY(value: _valueCount[i])))
+            path.addLine(to: CGPoint(x: 20 * CGFloat(i + 1), y: graphHeight - positioningY(value: CGFloat(_valueCount[i]))))
             
             let label: UILabel = {
                 let label:UILabel = valueLabel
-                label.frame = CGRect(x: 20 * CGFloat(i + 1), y: graphHeight - positioningY(value: _valueCount[i]), width: 0, height: 0)
-                label.text = "\(Int(_valueCount[i]))"
+                label.frame = CGRect(x: 20 * CGFloat(i + 1), y: graphHeight - positioningY(value: CGFloat(_valueCount[i])), width: 0, height: 0)
+                label.text = "\(_valueCount[i])"
                 label.sizeToFit()
                 
                 return label
