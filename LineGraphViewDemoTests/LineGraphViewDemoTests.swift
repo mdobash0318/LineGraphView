@@ -1,15 +1,15 @@
 //
-//  LineGraphViewTests.swift
-//  LineGraphViewTests
+//  LineGraphViewDemoTests.swift
+//  LineGraphViewDemoTests
 //
-//  Created by 土橋正晴 on 2019/07/18.
+//  Created by 土橋正晴 on 2019/07/20.
 //  Copyright © 2019 m.dobashi. All rights reserved.
 //
 
 import XCTest
-@testable import LineGraphView
+@testable import LineGraphViewDemo
 
-class LineGraphViewTests: XCTestCase {
+class LineGraphViewDemoTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

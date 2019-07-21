@@ -10,6 +10,8 @@ import Foundation
 
 public class LineGraphView: UIView {
     
+    public let scrollView: UIScrollView = UIScrollView()
+    
     public let lineLayer:CAShapeLayer = CAShapeLayer()
     /// グラフに表示する値を格納する配列
     public var valueCount: [CGFloat]?
@@ -30,7 +32,7 @@ public class LineGraphView: UIView {
     public var toValue: Any? = 1.0
     
     /// アニメーションの速度
-    public var duration:  CFTimeInterval = 1
+    public var duration: CFTimeInterval = 1
     
     /// グラフを表示するViewの高さ
     public var graphHeight: CGFloat = 0
@@ -51,7 +53,7 @@ public class LineGraphView: UIView {
         return label
     }
     
-    public var labelBackgroundColor:UIColor = .clear
+    public var labelBackgroundColor:UIColor = .white
     public var labelFont: UIFont?
     public var labelTextColor: UIColor?
     
@@ -68,10 +70,19 @@ public class LineGraphView: UIView {
     }
     
     
-    public convenience init(graphHeight height: CGFloat, count: [CGFloat]){
+    public convenience init(graphHeight height: CGFloat, values: [CGFloat]){
         self.init()
         graphHeight = height
-        valueCount = count
+        valueCount = values
+        
+        scrollView.contentSize.width = CGFloat(22 * values.count)
+        addSubview(scrollView)
+        
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        scrollView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -87,36 +98,34 @@ public class LineGraphView: UIView {
             debugPrint("valueCount is nil")
             return
         }
-        layer.addSublayer(lineLayer)
+        scrollView.layer.addSublayer(lineLayer)
         let path = UIBezierPath()
-        let graphY: CGFloat = (graphHeight / 12)
-        let lableY: CGFloat = (graphHeight / 11)
-        path.move(to: CGPoint(x: 20, y: graphHeight - _valueCount[0] * graphY))
+        path.move(to: CGPoint(x: 20, y: graphHeight - positioningY(value: _valueCount[0])))
         
         /* 一つ目の値を表示するラベルを生成 */
         let firstLabel: UILabel = {
             let label:UILabel = valueLabel
-            label.frame = CGRect(x: 20, y: graphHeight - _valueCount[0] * lableY - 10, width: 0, height: 0)
+            label.frame = CGRect(x: 20, y: graphHeight - positioningY(value: _valueCount[0]), width: 0, height: 0)
             label.text = "\(Int(_valueCount[0]))"
             label.textColor = .black
             label.sizeToFit()
             
             return label
         }()
-        addSubview(firstLabel)
+        scrollView.addSubview(firstLabel)
         
         for i in 1..<_valueCount.count {
-            path.addLine(to: CGPoint(x: 20 * CGFloat(i + 1), y: graphHeight - _valueCount[i] * graphY))
+            path.addLine(to: CGPoint(x: 20 * CGFloat(i + 1), y: graphHeight - positioningY(value: _valueCount[i])))
             
             let label: UILabel = {
                 let label:UILabel = valueLabel
-                label.frame = CGRect(x: 20 * CGFloat(i + 1), y: graphHeight - _valueCount[i] * lableY - 10, width: 0, height: 0)
+                label.frame = CGRect(x: 20 * CGFloat(i + 1), y: graphHeight - positioningY(value: _valueCount[i]), width: 0, height: 0)
                 label.text = "\(Int(_valueCount[i]))"
                 label.sizeToFit()
                 
                 return label
             }()
-            addSubview(label)
+            scrollView.addSubview(label)
         }
         
         lineLayer.path = path.cgPath
@@ -134,6 +143,14 @@ public class LineGraphView: UIView {
             
             
             lineLayer.add(anime, forKey: nil)
+        }
+    }
+    
+    public func positioningY(value: CGFloat) -> CGFloat {
+        if graphHeight >= value {
+            return value + 20
+        } else {
+            return graphHeight - 10
         }
     }
 }

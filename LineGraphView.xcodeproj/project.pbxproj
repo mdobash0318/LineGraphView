@@ -7,33 +7,78 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D054150422E0B2A200946B3F /* LineGraphView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05414FA22E0B2A200946B3F /* LineGraphView.framework */; };
-		D054150922E0B2A200946B3F /* LineGraphViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D054150822E0B2A200946B3F /* LineGraphViewTests.swift */; };
+		D052A8C522E3551B001FAFD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D052A8C422E3551B001FAFD8 /* AppDelegate.swift */; };
+		D052A8C722E3551B001FAFD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D052A8C622E3551B001FAFD8 /* ViewController.swift */; };
+		D052A8CA22E3551B001FAFD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D052A8C822E3551B001FAFD8 /* Main.storyboard */; };
+		D052A8CC22E3551C001FAFD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D052A8CB22E3551C001FAFD8 /* Assets.xcassets */; };
+		D052A8CF22E3551C001FAFD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D052A8CD22E3551C001FAFD8 /* LaunchScreen.storyboard */; };
+		D052A8DA22E3551C001FAFD8 /* LineGraphViewDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D052A8D922E3551C001FAFD8 /* LineGraphViewDemoTests.swift */; };
+		D052A8E522E3551C001FAFD8 /* LineGraphViewDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D052A8E422E3551C001FAFD8 /* LineGraphViewDemoUITests.swift */; };
 		D054150B22E0B2A200946B3F /* LineGraphView.h in Headers */ = {isa = PBXBuildFile; fileRef = D05414FD22E0B2A200946B3F /* LineGraphView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D080B45022E0B35000178F81 /* LineGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D080B44F22E0B35000178F81 /* LineGraphView.swift */; };
+		D0F4F33322E35B7D0031AA6E /* LineGraphView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05414FA22E0B2A200946B3F /* LineGraphView.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D054150522E0B2A200946B3F /* PBXContainerItemProxy */ = {
+		D052A8D622E3551C001FAFD8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D05414F122E0B2A200946B3F /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D05414F922E0B2A200946B3F;
-			remoteInfo = LineGraphView;
+			remoteGlobalIDString = D052A8C122E3551A001FAFD8;
+			remoteInfo = LineGraphViewDemo;
+		};
+		D052A8E122E3551C001FAFD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D05414F122E0B2A200946B3F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D052A8C122E3551A001FAFD8;
+			remoteInfo = LineGraphViewDemo;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D052A8C222E3551A001FAFD8 /* LineGraphViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LineGraphViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D052A8C422E3551B001FAFD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D052A8C622E3551B001FAFD8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D052A8C922E3551B001FAFD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D052A8CB22E3551C001FAFD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D052A8CE22E3551C001FAFD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D052A8D022E3551C001FAFD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D052A8D522E3551C001FAFD8 /* LineGraphViewDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LineGraphViewDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D052A8D922E3551C001FAFD8 /* LineGraphViewDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGraphViewDemoTests.swift; sourceTree = "<group>"; };
+		D052A8DB22E3551C001FAFD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D052A8E022E3551C001FAFD8 /* LineGraphViewDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LineGraphViewDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D052A8E422E3551C001FAFD8 /* LineGraphViewDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGraphViewDemoUITests.swift; sourceTree = "<group>"; };
+		D052A8E622E3551C001FAFD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D05414FA22E0B2A200946B3F /* LineGraphView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LineGraphView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D05414FD22E0B2A200946B3F /* LineGraphView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LineGraphView.h; sourceTree = "<group>"; };
 		D05414FE22E0B2A200946B3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D054150322E0B2A200946B3F /* LineGraphViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LineGraphViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D054150822E0B2A200946B3F /* LineGraphViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGraphViewTests.swift; sourceTree = "<group>"; };
-		D054150A22E0B2A200946B3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D080B44F22E0B35000178F81 /* LineGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D052A8BF22E3551A001FAFD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0F4F33322E35B7D0031AA6E /* LineGraphView.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D052A8D222E3551C001FAFD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D052A8DD22E3551C001FAFD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D05414F722E0B2A200946B3F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -41,23 +86,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D054150022E0B2A200946B3F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D054150422E0B2A200946B3F /* LineGraphView.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D052A8C322E3551B001FAFD8 /* LineGraphViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				D052A8C422E3551B001FAFD8 /* AppDelegate.swift */,
+				D052A8C622E3551B001FAFD8 /* ViewController.swift */,
+				D052A8C822E3551B001FAFD8 /* Main.storyboard */,
+				D052A8CB22E3551C001FAFD8 /* Assets.xcassets */,
+				D052A8CD22E3551C001FAFD8 /* LaunchScreen.storyboard */,
+				D052A8D022E3551C001FAFD8 /* Info.plist */,
+			);
+			path = LineGraphViewDemo;
+			sourceTree = "<group>";
+		};
+		D052A8D822E3551C001FAFD8 /* LineGraphViewDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				D052A8D922E3551C001FAFD8 /* LineGraphViewDemoTests.swift */,
+				D052A8DB22E3551C001FAFD8 /* Info.plist */,
+			);
+			path = LineGraphViewDemoTests;
+			sourceTree = "<group>";
+		};
+		D052A8E322E3551C001FAFD8 /* LineGraphViewDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D052A8E422E3551C001FAFD8 /* LineGraphViewDemoUITests.swift */,
+				D052A8E622E3551C001FAFD8 /* Info.plist */,
+			);
+			path = LineGraphViewDemoUITests;
+			sourceTree = "<group>";
+		};
 		D05414F022E0B2A200946B3F = {
 			isa = PBXGroup;
 			children = (
 				D05414FC22E0B2A200946B3F /* LineGraphView */,
-				D054150722E0B2A200946B3F /* LineGraphViewTests */,
+				D052A8C322E3551B001FAFD8 /* LineGraphViewDemo */,
+				D052A8D822E3551C001FAFD8 /* LineGraphViewDemoTests */,
+				D052A8E322E3551C001FAFD8 /* LineGraphViewDemoUITests */,
 				D05414FB22E0B2A200946B3F /* Products */,
+				D0F4F33222E35B7D0031AA6E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,7 +136,9 @@
 			isa = PBXGroup;
 			children = (
 				D05414FA22E0B2A200946B3F /* LineGraphView.framework */,
-				D054150322E0B2A200946B3F /* LineGraphViewTests.xctest */,
+				D052A8C222E3551A001FAFD8 /* LineGraphViewDemo.app */,
+				D052A8D522E3551C001FAFD8 /* LineGraphViewDemoTests.xctest */,
+				D052A8E022E3551C001FAFD8 /* LineGraphViewDemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,13 +153,11 @@
 			path = LineGraphView;
 			sourceTree = "<group>";
 		};
-		D054150722E0B2A200946B3F /* LineGraphViewTests */ = {
+		D0F4F33222E35B7D0031AA6E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D054150822E0B2A200946B3F /* LineGraphViewTests.swift */,
-				D054150A22E0B2A200946B3F /* Info.plist */,
 			);
-			path = LineGraphViewTests;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,6 +174,59 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		D052A8C122E3551A001FAFD8 /* LineGraphViewDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D052A8E722E3551C001FAFD8 /* Build configuration list for PBXNativeTarget "LineGraphViewDemo" */;
+			buildPhases = (
+				D052A8BE22E3551A001FAFD8 /* Sources */,
+				D052A8BF22E3551A001FAFD8 /* Frameworks */,
+				D052A8C022E3551A001FAFD8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LineGraphViewDemo;
+			productName = LineGraphViewDemo;
+			productReference = D052A8C222E3551A001FAFD8 /* LineGraphViewDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D052A8D422E3551C001FAFD8 /* LineGraphViewDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D052A8EA22E3551C001FAFD8 /* Build configuration list for PBXNativeTarget "LineGraphViewDemoTests" */;
+			buildPhases = (
+				D052A8D122E3551C001FAFD8 /* Sources */,
+				D052A8D222E3551C001FAFD8 /* Frameworks */,
+				D052A8D322E3551C001FAFD8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D052A8D722E3551C001FAFD8 /* PBXTargetDependency */,
+			);
+			name = LineGraphViewDemoTests;
+			productName = LineGraphViewDemoTests;
+			productReference = D052A8D522E3551C001FAFD8 /* LineGraphViewDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D052A8DF22E3551C001FAFD8 /* LineGraphViewDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D052A8ED22E3551C001FAFD8 /* Build configuration list for PBXNativeTarget "LineGraphViewDemoUITests" */;
+			buildPhases = (
+				D052A8DC22E3551C001FAFD8 /* Sources */,
+				D052A8DD22E3551C001FAFD8 /* Frameworks */,
+				D052A8DE22E3551C001FAFD8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D052A8E222E3551C001FAFD8 /* PBXTargetDependency */,
+			);
+			name = LineGraphViewDemoUITests;
+			productName = LineGraphViewDemoUITests;
+			productReference = D052A8E022E3551C001FAFD8 /* LineGraphViewDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		D05414F922E0B2A200946B3F /* LineGraphView */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D054150E22E0B2A200946B3F /* Build configuration list for PBXNativeTarget "LineGraphView" */;
@@ -121,24 +245,6 @@
 			productReference = D05414FA22E0B2A200946B3F /* LineGraphView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D054150222E0B2A200946B3F /* LineGraphViewTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D054151122E0B2A200946B3F /* Build configuration list for PBXNativeTarget "LineGraphViewTests" */;
-			buildPhases = (
-				D05414FF22E0B2A200946B3F /* Sources */,
-				D054150022E0B2A200946B3F /* Frameworks */,
-				D054150122E0B2A200946B3F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D054150622E0B2A200946B3F /* PBXTargetDependency */,
-			);
-			name = LineGraphViewTests;
-			productName = LineGraphViewTests;
-			productReference = D054150322E0B2A200946B3F /* LineGraphViewTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -149,12 +255,20 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = m.dobashi;
 				TargetAttributes = {
+					D052A8C122E3551A001FAFD8 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					D052A8D422E3551C001FAFD8 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = D052A8C122E3551A001FAFD8;
+					};
+					D052A8DF22E3551C001FAFD8 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = D052A8C122E3551A001FAFD8;
+					};
 					D05414F922E0B2A200946B3F = {
 						CreatedOnToolsVersion = 10.2.1;
 						LastSwiftMigration = 1020;
-					};
-					D054150222E0B2A200946B3F = {
-						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
 			};
@@ -164,6 +278,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = D05414F022E0B2A200946B3F;
 			productRefGroup = D05414FB22E0B2A200946B3F /* Products */;
@@ -171,20 +286,39 @@
 			projectRoot = "";
 			targets = (
 				D05414F922E0B2A200946B3F /* LineGraphView */,
-				D054150222E0B2A200946B3F /* LineGraphViewTests */,
+				D052A8C122E3551A001FAFD8 /* LineGraphViewDemo */,
+				D052A8D422E3551C001FAFD8 /* LineGraphViewDemoTests */,
+				D052A8DF22E3551C001FAFD8 /* LineGraphViewDemoUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D05414F822E0B2A200946B3F /* Resources */ = {
+		D052A8C022E3551A001FAFD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D052A8CF22E3551C001FAFD8 /* LaunchScreen.storyboard in Resources */,
+				D052A8CC22E3551C001FAFD8 /* Assets.xcassets in Resources */,
+				D052A8CA22E3551B001FAFD8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D052A8D322E3551C001FAFD8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D054150122E0B2A200946B3F /* Resources */ = {
+		D052A8DE22E3551C001FAFD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D05414F822E0B2A200946B3F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -194,6 +328,31 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D052A8BE22E3551A001FAFD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D052A8C722E3551B001FAFD8 /* ViewController.swift in Sources */,
+				D052A8C522E3551B001FAFD8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D052A8D122E3551C001FAFD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D052A8DA22E3551C001FAFD8 /* LineGraphViewDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D052A8DC22E3551C001FAFD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D052A8E522E3551C001FAFD8 /* LineGraphViewDemoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D05414F622E0B2A200946B3F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -202,25 +361,159 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D05414FF22E0B2A200946B3F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D054150922E0B2A200946B3F /* LineGraphViewTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D054150622E0B2A200946B3F /* PBXTargetDependency */ = {
+		D052A8D722E3551C001FAFD8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D05414F922E0B2A200946B3F /* LineGraphView */;
-			targetProxy = D054150522E0B2A200946B3F /* PBXContainerItemProxy */;
+			target = D052A8C122E3551A001FAFD8 /* LineGraphViewDemo */;
+			targetProxy = D052A8D622E3551C001FAFD8 /* PBXContainerItemProxy */;
+		};
+		D052A8E222E3551C001FAFD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D052A8C122E3551A001FAFD8 /* LineGraphViewDemo */;
+			targetProxy = D052A8E122E3551C001FAFD8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		D052A8C822E3551B001FAFD8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D052A8C922E3551B001FAFD8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D052A8CD22E3551C001FAFD8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D052A8CE22E3551C001FAFD8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		D052A8E822E3551C001FAFD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7RPFL7EXKD;
+				INFOPLIST_FILE = LineGraphViewDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = m.dobashi.LineGraphViewDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D052A8E922E3551C001FAFD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7RPFL7EXKD;
+				INFOPLIST_FILE = LineGraphViewDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = m.dobashi.LineGraphViewDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D052A8EB22E3551C001FAFD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7RPFL7EXKD;
+				INFOPLIST_FILE = LineGraphViewDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = m.dobashi.LineGraphViewDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LineGraphViewDemo.app/LineGraphViewDemo";
+			};
+			name = Debug;
+		};
+		D052A8EC22E3551C001FAFD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7RPFL7EXKD;
+				INFOPLIST_FILE = LineGraphViewDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = m.dobashi.LineGraphViewDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LineGraphViewDemo.app/LineGraphViewDemo";
+			};
+			name = Release;
+		};
+		D052A8EE22E3551C001FAFD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7RPFL7EXKD;
+				INFOPLIST_FILE = LineGraphViewDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = m.dobashi.LineGraphViewDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LineGraphViewDemo;
+			};
+			name = Debug;
+		};
+		D052A8EF22E3551C001FAFD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7RPFL7EXKD;
+				INFOPLIST_FILE = LineGraphViewDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = m.dobashi.LineGraphViewDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LineGraphViewDemo;
+			};
+			name = Release;
+		};
 		D054150C22E0B2A200946B3F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -398,47 +691,36 @@
 			};
 			name = Release;
 		};
-		D054151222E0B2A200946B3F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7RPFL7EXKD;
-				INFOPLIST_FILE = LineGraphViewTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = m.dobashi.LineGraphViewTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		D054151322E0B2A200946B3F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7RPFL7EXKD;
-				INFOPLIST_FILE = LineGraphViewTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = m.dobashi.LineGraphViewTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D052A8E722E3551C001FAFD8 /* Build configuration list for PBXNativeTarget "LineGraphViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D052A8E822E3551C001FAFD8 /* Debug */,
+				D052A8E922E3551C001FAFD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D052A8EA22E3551C001FAFD8 /* Build configuration list for PBXNativeTarget "LineGraphViewDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D052A8EB22E3551C001FAFD8 /* Debug */,
+				D052A8EC22E3551C001FAFD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D052A8ED22E3551C001FAFD8 /* Build configuration list for PBXNativeTarget "LineGraphViewDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D052A8EE22E3551C001FAFD8 /* Debug */,
+				D052A8EF22E3551C001FAFD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D05414F422E0B2A200946B3F /* Build configuration list for PBXProject "LineGraphView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -453,15 +735,6 @@
 			buildConfigurations = (
 				D054150F22E0B2A200946B3F /* Debug */,
 				D054151022E0B2A200946B3F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D054151122E0B2A200946B3F /* Build configuration list for PBXNativeTarget "LineGraphViewTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D054151222E0B2A200946B3F /* Debug */,
-				D054151322E0B2A200946B3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
