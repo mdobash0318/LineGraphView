@@ -11,10 +11,10 @@ import LineGraphView
 
 class ViewController: UIViewController {
 
-    let values: [Int] = [10, 20, 15, 300, 50, 0, 45, 10000, 100, 40, 10, 20, 15, 300, 50, 0, 45, 10000, 100, 40]
+    let values: [Int] = [10, 20, 15, 0, 300, 50, 0, 45, 10000, 100, 200, 200, 300, 400,500,  40, 500, 10, 20, 15, 300, 50, 0, 45, 10000, 100, 40]
     
     lazy var lineGraphView: LineGraphView = {
-        let line:LineGraphView = LineGraphView(graphHeight: UIScreen.main.bounds.height * 0.5, values: values)
+        let line:LineGraphView = LineGraphView(graphHeight: UIScreen.main.bounds.height * 0.7, values: values)
         line.duration = 1
         line.lineWidth = 2
         line.strokeColor = .red
@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         line.layer.borderColor = UIColor.black.cgColor
         line.labelFont = UIFont.systemFont(ofSize: 12)
         line.horizontalMargin = 30
+        line.maximumNumber = .fiveHundred
         
         return line
     }()

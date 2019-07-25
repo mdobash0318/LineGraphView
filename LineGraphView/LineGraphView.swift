@@ -16,6 +16,8 @@ public class LineGraphView: UIView {
     /// グラフに表示する値を格納する配列
     public var valueCount: [Int]?
     
+    public var maximumNumber: MaximumNumber = .ten
+    
     /// アニメーションの表示の有無 デフォルト:true
     public var isAnime: Bool = true
     
@@ -149,10 +151,23 @@ public class LineGraphView: UIView {
     }
     
     public func positioningY(value: CGFloat) -> CGFloat {
-        if graphHeight >= value {
-            return value + 20
+        let height:CGFloat = (graphHeight * (value / maximumNumber.rawValue)) + 20
+        if graphHeight - 10 >= height {
+            return height
         } else {
             return graphHeight - 10
         }
+    }
+    
+    
+    public enum MaximumNumber: CGFloat {
+        case ten = 10
+        case oneHundred = 100
+        case fiveHundred = 500
+        case onethousand = 1000
+        case fiveThousand = 5000
+        case tenthousand = 10000
+        case fiftyThousand = 50000
+        case oneHundredThousand = 100000
     }
 }
