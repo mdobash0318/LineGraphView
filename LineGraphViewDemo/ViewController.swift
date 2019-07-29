@@ -23,7 +23,9 @@ class ViewController: UIViewController {
         line.layer.borderColor = UIColor.black.cgColor
         line.labelFont = UIFont.systemFont(ofSize: 12)
         line.horizontalMargin = 30
+       line.isHideLabel = true
         
+        line.ruledLine()
         return line
     }()
     

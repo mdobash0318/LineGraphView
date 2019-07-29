@@ -148,6 +148,47 @@ public class LineGraphView: UIView {
         }
     }
     
+    public func ruledLine(){
+        let ruledLineLayer:CAShapeLayer = CAShapeLayer()
+        
+        guard let _valueCount:[Int] = valueCount else {
+            debugPrint("valueCount is nil")
+            return
+        }
+        
+        scrollView.contentSize.width = horizontalMargin * CGFloat(_valueCount.count + 1)
+        scrollView.layer.addSublayer(ruledLineLayer)
+        
+        let maxValue:Double = Double((_valueCount.max())!)
+        var maxValues: [Int] = [Int]()
+        for i in 1..<6 {
+            maxValues.append(Int(maxValue * (0.2 * Double(i))))
+            
+        }
+        maxValues.reverse()
+        let path = UIBezierPath()
+        
+        for i in 0..<5 {
+            path.move(to: CGPoint(x: 25, y: graphHeight * (0.2 * CGFloat(i))))
+            path.addLine(to: CGPoint(x: scrollView.contentSize.width, y: graphHeight * (0.2 * CGFloat(i))))
+            
+            let label: UILabel = {
+                let label:UILabel = valueLabel
+                label.frame = CGRect(x: 5, y: graphHeight * (0.2 * CGFloat(i)), width: 0, height: 0)
+                label.text = "\(maxValues[i])"
+                label.sizeToFit()
+                label.isHidden = false
+                return label
+            }()
+            scrollView.addSubview(label)
+        }
+        
+        ruledLineLayer.path = path.cgPath
+        ruledLineLayer.lineWidth = 0.5
+        ruledLineLayer.fillColor = UIColor.clear.cgColor
+        ruledLineLayer.strokeColor = UIColor.black.cgColor
+    }
+    
     public func positioningY(value: CGFloat) -> CGFloat {
         let maxValue:Int = (valueCount?.max())!
         let height:CGFloat = (graphHeight * (value / CGFloat(maxValue))) + 20
