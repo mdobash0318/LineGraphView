@@ -65,6 +65,9 @@ public class LineGraphView: UIView {
     /// ラベルの非表示 デフォルト:false
     public var isHideLabel:Bool = false
     
+    /// 罫線に表示するラベルの非表示
+    public var isHideRuledLineLabel: Bool = false
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -167,20 +170,21 @@ public class LineGraphView: UIView {
         }
         maxValues.reverse()
         let path = UIBezierPath()
-        
-        for i in 0..<5 {
-            path.move(to: CGPoint(x: 25, y: graphHeight * (0.2 * CGFloat(i))))
-            path.addLine(to: CGPoint(x: scrollView.contentSize.width, y: graphHeight * (0.2 * CGFloat(i))))
+        let xPosition: CGFloat = isHideRuledLineLabel == false ? 25 : 0
+        for i in 1..<5 {
+            path.move(to: CGPoint(x: xPosition, y: graphHeight * (0.2 * CGFloat(i)) - 20))
+            path.addLine(to: CGPoint(x: scrollView.contentSize.width, y: graphHeight * (0.2 * CGFloat(i)) - 20))
             
             let label: UILabel = {
                 let label:UILabel = valueLabel
-                label.frame = CGRect(x: 5, y: graphHeight * (0.2 * CGFloat(i)), width: 0, height: 0)
+                label.frame = CGRect(x: 5, y: graphHeight * (0.2 * CGFloat(i)) - 20, width: 0, height: 0)
                 label.text = "\(maxValues[i])"
                 label.sizeToFit()
-                label.isHidden = false
+                label.isHidden = isHideRuledLineLabel
+                
                 return label
             }()
-            scrollView.addSubview(label)
+            self.addSubview(label)
         }
         
         ruledLineLayer.path = path.cgPath
