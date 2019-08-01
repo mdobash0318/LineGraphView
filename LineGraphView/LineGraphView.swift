@@ -20,7 +20,7 @@ public class LineGraphView: UIView {
     public var isAnime: Bool = true
     
     /// 線の太さ
-    public var lineWidth: CGFloat = 1
+    public var strokeWidth: CGFloat = 1
     
     /// 線の色
     public var strokeColor: UIColor = UIColor.black
@@ -134,7 +134,7 @@ public class LineGraphView: UIView {
         }
         
         lineLayer.path = path.cgPath
-        lineLayer.lineWidth = lineWidth
+        lineLayer.lineWidth = strokeWidth
         lineLayer.fillColor = UIColor.clear.cgColor
         lineLayer.strokeColor = strokeColor.cgColor
         
@@ -151,7 +151,7 @@ public class LineGraphView: UIView {
         }
     }
     
-    public func ruledLine(){
+    public func ruledLine(lineWidth: CGFloat){
         let ruledLineLayer:CAShapeLayer = CAShapeLayer()
         
         guard let _valueCount:[Int] = valueCount else {
@@ -160,7 +160,7 @@ public class LineGraphView: UIView {
         }
         
         scrollView.contentSize.width = horizontalMargin * CGFloat(_valueCount.count + 1)
-        scrollView.layer.addSublayer(ruledLineLayer)
+        layer.addSublayer(ruledLineLayer)
         
         let maxValue:Double = Double((_valueCount.max())!)
         var maxValues: [Int] = [Int]()
@@ -173,7 +173,7 @@ public class LineGraphView: UIView {
         let xPosition: CGFloat = isHideRuledLineLabel == false ? 25 : 0
         for i in 1..<5 {
             path.move(to: CGPoint(x: xPosition, y: graphHeight * (0.2 * CGFloat(i)) - 20))
-            path.addLine(to: CGPoint(x: scrollView.contentSize.width, y: graphHeight * (0.2 * CGFloat(i)) - 20))
+            path.addLine(to: CGPoint(x: lineWidth, y: graphHeight * (0.2 * CGFloat(i)) - 20))
             
             let label: UILabel = {
                 let label:UILabel = valueLabel

@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     lazy var lineGraphView: LineGraphView = {
         let line:LineGraphView = LineGraphView(graphHeight: UIScreen.main.bounds.height * 0.3, values: values)
         line.duration = 3
-        line.lineWidth = 5
+        line.strokeWidth = 5
         line.strokeColor = .red
         line.backgroundColor = .white
         line.layer.borderWidth = 1
@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         line.isHideLabel = false
         line.isHideRuledLineLabel = false
         
-        line.ruledLine()
+        line.ruledLine(lineWidth: UIScreen.main.bounds.width)
         
         return line
     }()
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         view.addSubview(lineGraphView)
         lineGraphView.translatesAutoresizingMaskIntoConstraints = false
         lineGraphView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
-        lineGraphView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        lineGraphView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width ).isActive = true
         lineGraphView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         lineGraphView.heightAnchor.constraint(equalToConstant: lineGraphView.graphHeight).isActive = true
         
