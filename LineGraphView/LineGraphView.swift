@@ -151,6 +151,11 @@ public class LineGraphView: UIView {
         }
     }
     
+    
+    
+    /// 罫線を作る
+    ///
+    /// - Parameter lineWidth: 罫線の長さ
     public func ruledLine(lineWidth: CGFloat){
         let ruledLineLayer:CAShapeLayer = CAShapeLayer()
         
@@ -193,7 +198,12 @@ public class LineGraphView: UIView {
         ruledLineLayer.strokeColor = UIColor.black.cgColor
     }
     
+    
+    
+    
+    /// グラフの線のY軸を返す
     public func positioningY(value: CGFloat) -> CGFloat {
+        /// valueCountの最大値を取得
         let maxValue:Int = (valueCount?.max())!
         let height:CGFloat = (graphHeight * (value / CGFloat(maxValue))) + 20
         if graphHeight >= height {
