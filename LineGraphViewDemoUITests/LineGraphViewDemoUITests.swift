@@ -2,7 +2,7 @@
 //  LineGraphViewDemoUITests.swift
 //  LineGraphViewDemoUITests
 //
-//  Created by 土橋正晴 on 2019/07/20.
+//  Created by 土橋正晴 on 2019/08/24.
 //  Copyright © 2019 m.dobashi. All rights reserved.
 //
 
