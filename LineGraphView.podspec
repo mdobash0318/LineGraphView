@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "LineGraphView"
-  spec.version      = "1.0.2"
+  spec.version      = "1.0.4"
   spec.summary      = "create LineGraphView"
   spec.description  = "You can make a line graph"
 
