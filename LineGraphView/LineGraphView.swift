@@ -7,38 +7,27 @@
 //
 
 import Foundation
+import UIKit
 
 public class LineGraphView: UIView {
-    
+
+    /// 罫線に表示するラベルの非表示
+    public var isHideRuledLineLabel: Bool = false
     public let scrollView: UIScrollView = UIScrollView()
     
     public let lineLayer:CAShapeLayer = CAShapeLayer()
     /// グラフに表示する値を格納する配列
     public var valueCount: [Int]?
     
-    /// アニメーションの表示の有無 デフォルト:true
-    public var isAnime: Bool = true
+    public var fromToValue: FromToValue?
     
-    /// 線の太さ
-    public var strokeWidth: CGFloat = 1
+    public var lineOptions: LineOptions?
+
+    public var lineAnimationOptions: LineAnimationOptions?
     
-    /// 線の色
-    public var strokeColor: UIColor = UIColor.black
-    
-    /// 初期位置
-    public var fromValue: Any? = 0.0
-    
-    /// アニメーションの終了時の位置
-    public var toValue: Any? = 1.0
-    
-    /// アニメーションの速度
-    public var duration: CFTimeInterval = 1
-    
+    public var valueLabelOption: ValueLabelOption?
     /// グラフを表示するViewの高さ
     public var graphHeight: CGFloat = 0
-    
-    /// デフォルト:.linear
-    public var timingFunction:CAMediaTimingFunction? = .init(name: .linear)
     
     /// 棒グラフの横の余白
     public var horizontalMargin:CGFloat = 20
@@ -46,41 +35,37 @@ public class LineGraphView: UIView {
     /// 値を表示する
     public var valueLabel:UILabel {
         let label: UILabel = UILabel()
-        label.backgroundColor = labelBackgroundColor
-        label.textColor = labelTextColor
-        label.font = labelFont
-        label.textAlignment = labelTextAlignment
-        label.isHidden = isHideLabel
+        label.backgroundColor = valueLabelOption?.labelBackgroundColor
+        label.textColor = valueLabelOption?.labelTextColor
+        label.font = valueLabelOption?.labelFont
+        label.textAlignment = valueLabelOption!.labelTextAlignment
+        label.isHidden = valueLabelOption!.isHideLabel
         
         return label
     }
     
-    public var labelBackgroundColor:UIColor = .white
-    public var labelFont: UIFont?
-    public var labelTextColor: UIColor?
-    
-    /// デフォルト:.right
-    public var labelTextAlignment:NSTextAlignment = .right
-    
-    /// ラベルの非表示 デフォルト:false
-    public var isHideLabel:Bool = false
-    
-    /// 罫線に表示するラベルの非表示
-    public var isHideRuledLineLabel: Bool = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
     
-    public convenience init(graphHeight height: CGFloat, values: [Int]){
+    public convenience init(graphHeight height: CGFloat,
+                            values: [Int],
+                            fromToValue: FromToValue = .init(),
+                            lineOptions: LineOptions = .init(),
+                            lineAnimationOptions:LineAnimationOptions = .init(),
+                            valueLabelOption: ValueLabelOption = .init()
+                            ) {
         self.init()
         graphHeight = height
         valueCount = values
-        
+        self.fromToValue = fromToValue
+        self.lineOptions = lineOptions
+        self.lineAnimationOptions = lineAnimationOptions
+        self.valueLabelOption = valueLabelOption
         
         addSubview(scrollView)
-        
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         scrollView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
@@ -98,7 +83,9 @@ public class LineGraphView: UIView {
     /// falseなら描画のみ
     public func setLineGraph(){
         guard let _valueCount:[Int] = valueCount else {
-            debugPrint("valueCount is nil")
+            #if DEBUG
+            print("valueCount is nil")
+            #endif
             return
         }
         
@@ -134,24 +121,30 @@ public class LineGraphView: UIView {
         }
         
         lineLayer.path = path.cgPath
-        lineLayer.lineWidth = strokeWidth
+        lineLayer.lineWidth = lineOptions!.strokeWidth
         lineLayer.fillColor = UIColor.clear.cgColor
-        lineLayer.strokeColor = strokeColor.cgColor
+        lineLayer.strokeColor = lineOptions?.strokeColor.cgColor
         
-        if isAnime == true {
-            let anime = CABasicAnimation(keyPath:"strokeEnd")
-            anime.fromValue = fromValue
-            anime.toValue = toValue
-            anime.timingFunction = timingFunction
-            anime.duration = duration
-            anime.fillMode = .forwards
-            
-            
+        if lineAnimationOptions?.isAnime == true {
+            let anime = lineAnimation()
             lineLayer.add(anime, forKey: nil)
+            
         }
     }
     
     
+    
+    /// アニメーションの設定
+    public func lineAnimation() -> CABasicAnimation {
+        let anime = CABasicAnimation(keyPath:"strokeEnd")
+        anime.fromValue = fromToValue?.fromValue
+        anime.toValue = fromToValue?.toValue
+        anime.timingFunction = lineAnimationOptions?.timingFunction
+        anime.duration = lineAnimationOptions!.duration
+        anime.fillMode = .forwards
+        
+        return anime
+    }
     
     /// 罫線を作る
     ///
@@ -160,7 +153,9 @@ public class LineGraphView: UIView {
         let ruledLineLayer:CAShapeLayer = CAShapeLayer()
         
         guard let _valueCount:[Int] = valueCount else {
-            debugPrint("valueCount is nil")
+            #if DEBUG
+            print("valueCount is nil")
+            #endif
             return
         }
         
@@ -212,4 +207,75 @@ public class LineGraphView: UIView {
             return graphHeight
         }
     }
+    
+    
+    
+    
+    // MARK: struct
+    
+    
+    public struct FromToValue {
+        /// 初期位置
+        public var fromValue: Any? = 0.0
+        /// アニメーションの終了時の位置
+        public var toValue: Any? = 1.0
+        
+        public init(fromValue: Any? = 0.0, toValue: Any? = 1.0) {
+            self.fromValue = fromValue
+            self.toValue = toValue
+        }
+    }
+    
+    
+    
+    public struct LineOptions {
+        /// 線の太さ
+        public var strokeWidth: CGFloat = 1
+        /// 線の色
+        public var strokeColor: UIColor = UIColor.black
+        
+        public init(strokeWidth: CGFloat = 1, strokeColor: UIColor = UIColor.black) {
+            self.strokeWidth = strokeWidth
+            self.strokeColor = strokeColor
+        }
+        
+    }
+    
+    
+    public struct LineAnimationOptions {
+        /// アニメーションの表示の有無 デフォルト:true
+        public var isAnime: Bool = true
+        /// アニメーションの速度
+        public var duration: CFTimeInterval = 1
+        /// デフォルト:.linear
+        public var timingFunction:CAMediaTimingFunction? = .init(name: .linear)
+        
+        public init(isAnime: Bool = true, duration: CFTimeInterval = 1, timingFunction:CAMediaTimingFunction? = .init(name: .linear)) {
+            self.isAnime = isAnime
+            self.duration = duration
+            self.timingFunction = timingFunction
+        }
+    }
+    
+    
+    
+    public struct ValueLabelOption {
+        public var labelBackgroundColor:UIColor = .white
+        public var labelFont: UIFont?
+        public var labelTextColor: UIColor = .black
+        /// デフォルト:.right
+        public var labelTextAlignment:NSTextAlignment = .right
+        /// ラベルの非表示 デフォルト:false
+        public var isHideLabel:Bool = false
+        
+        
+        public init(labelFont: UIFont? = UIFont.systemFont(ofSize: 12), labelTextColor: UIColor = .black, labelBackgroundColor:UIColor = .white, isHideLabel:Bool = false) {
+            self.labelTextColor = labelTextColor
+            self.labelBackgroundColor = labelBackgroundColor
+            self.isHideLabel = isHideLabel
+            self.labelFont = labelFont
+            
+        }
+    }
+    
 }
