@@ -8,11 +8,11 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "LineGraphView"
-  spec.version      = "1.0.4"
+  spec.version      = "1.0.5"
   spec.summary      = "create LineGraphView"
   spec.description  = "You can make a line graph"
 
-  spec.homepage     = "https://github.com/wrench0318/LineGraphView"
+  spec.homepage     = "https://github.com/mdobash0318/LineGraphView"
   spec.author       = "Masaharu Dobashi"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.platform     = :ios
@@ -21,7 +21,7 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = "10.0"
 
 
-  spec.source       = { :git => "https://github.com/wrench0318/LineGraphView.git", :tag => "v#{spec.version}" }
+  spec.source       = { :git => "https://github.com/mdobash0318/LineGraphView.git", :tag => "v#{spec.version}" }
 
 
   spec.source_files  = "LineGraphView/**/*.{swift,h,m}"
